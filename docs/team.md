@@ -6,11 +6,11 @@ title:  Team
 # {{ page.title }}
 
 
-## USER 1
-***UCI Net ID***: ucinetid1
+## Andy Teh
+***UCI Net ID***: ahteh
 
-## USER 2
-***UCI Net ID***: ucinetid2
+## Jonathan Kwok
+***UCI Net ID***: jjkwow2
 
-## USER 3
-***UCI Net ID***: ucinetid3
+## Jason Lin
+***UCI Net ID***: jkhlin
