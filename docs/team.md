@@ -1,16 +1,18 @@
 ---
 layout: default
-title:  Team
+title: Team
 ---
 
 # {{ page.title }}
 
-
 ## Andy Teh
-***UCI Net ID***: ahteh
+
+**_UCI Net ID_**: ahteh
 
 ## Jonathan Kwok
-***UCI Net ID***: jjkwow2
+
+**_UCI Net ID_**: jjkwow2
 
 ## Jason Lin
-***UCI Net ID***: jkhlin
+
+**_UCI Net ID_**: jkhlin
