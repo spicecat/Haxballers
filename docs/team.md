@@ -11,7 +11,7 @@ title: Team
 
 ## Jonathan Kwok
 
-**_UCI Net ID_**: jjkwow2
+**_UCI Net ID_**: jjkwok2
 
 ## Jason Lin
 
