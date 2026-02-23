@@ -7,7 +7,7 @@ Our project aims to develop a multi-agent system to play Haxball, a simulated ga
 ## Approach
 Our project uses Proximal Policy Optimization (PPO) to train our agents. The loss function of PPO is shown as follows where $\epsilon$ is the clip_range hyperparameter that roughly depicts how far away the new policy can go from the old one.
 (Source: https://spinningup.openai.com/en/latest/algorithms/ppo.html)
-$$L(a, s, \theta_{k}, \theta) = min(\frac{\pi_{\theta}(a|s)}{\pi_{{\theta}_{k}}(a|s)} A^{\pi_{\theta_{k}}}(s, a), clip(\frac{\pi_{\theta}(a|s)}{\pi_{{\theta}_{k}}(a|s)}, 1 - \epsilon, 1 + \epsilon) A^{\pi_{\theta_{k}}}(s, a))$$
+$$L(a, s, \theta_{k}, \theta) = min(\frac{\pi_{\theta}(a|s)}{\pi_{\theta_{k}}(a|s)} A^{\pi_{\theta_{k}}}(s, a), clip(\frac{\pi_{\theta}(a|s)}{\pi_{\theta_{k}}(a|s)}, 1 - \epsilon, 1 + \epsilon) A^{\pi_{\theta_{k}}}(s, a))$$
 We are using the MlpPolicy along with the default hyperparameters for PPO: learning_rate=0.0003, n_steps=2048, batch_size=64, n_epochs=10, gamma=0.99, gae_lambda=0.95, clip_range=0.2. (Source: https://stable-baselines3.readthedocs.io/en/master/modules/ppo.html)
 
 The observation builder is defined by the players, the current game state, the previous actions taken, and the team kickoff state. The actions that can be taken are moving up, down, left and right or kicking the ball.
