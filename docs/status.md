@@ -42,8 +42,16 @@ For quantitative evaluation, we measure the performance of different types of ag
 
 We also implemented an Elo rating system using the Plackett-Luce model from the openskill library. We run a tournament where our trained agents compete against the scripted bots (ChaseBot, GoalkeeperBot) to determine a relative skill rating.
 
-For qualitative analysis, we visualize the results externally by reviewing game replays. The Ursinaxball library comes with a way to record the games that are played and save it as a file. We currently have a game replay of an agent…
-[Insert video of a game replay]
+For qualitative analysis, we visualize the results externally by reviewing game replays. The Ursinaxball library comes with a way to record the games that are played and save it as a file. We currently have a game replay of agents engaging in a 2v2 match. The red team has a GoalkeeperBot and a ChaseBot, while the blue team has a StrikerBot and a RandomBot.
+
+<div style="position: relative; width: 75%; height: 0; padding-top: 50%;
+ padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
+ border-radius: 8px; will-change: transform;">
+  <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
+    src="https://www.canva.com/design/DAHCN0m8MuE/8Ducc4chwivIzGpz9YFXTA/watch?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+  </iframe>
+</div>
+<a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAHCN0m8MuE&#x2F;8Ducc4chwivIzGpz9YFXTA&#x2F;watch?utm_content=DAHCN0m8MuE&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener">Haxballers 2v2</a>
 
 ## Remaining Goals and Challenges
 For the remainder of the quarter, we intend to finish migrating to the PettingZoo library. Currently, we are training our agents in a single-agent environment against classical bots with Gymnasium. In order to implement self-play for better performance, we will need to use PettingZoo since it is more suitable for multi-agent reinforcement learning.
