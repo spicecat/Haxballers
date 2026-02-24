@@ -3,7 +3,14 @@ layout: default
 title: Status
 ---
 ## Video Summary
-[Canvas Video](https://www.canva.com/design/DAHCNPmejgo/fl1dcJjY_gUUZJJ8l3V7iQ/edit)
+<div style="position: relative; width: 100%; height: 0; padding-top: 56.2500%;
+ padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
+ border-radius: 8px; will-change: transform;">
+  <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
+    src="https://www.canva.com/design/DAHCNPmejgo/NItgT2w0f0EnpV4Lfk27LQ/watch?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+  </iframe>
+</div>
+<a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAHCNPmejgo&#x2F;NItgT2w0f0EnpV4Lfk27LQ&#x2F;watch?utm_content=DAHCNPmejgo&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener">Haxballers Status Report</a>
 
 ## Project Summary
 Our project’s aim is to develop and train a multi-agent system to play the game of Haxball, a simplified soccer simulation game. We want to train agents so that they can score goals, defend goals, and coordinate with teammates. The agents will be given the current game state as an input, including the position and velocities of all players and the ball, and output an action where they either move in a cardinal direction or attempt to kick the ball. Agents will be trained in multiple scenarios such as 1v0, 1v1, 2v2, and 3v3 matches.
