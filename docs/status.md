@@ -16,7 +16,8 @@ Each player observes the position and velocity of the ball and all players, the 
 
 We currently use 4 classical agents for training against. They are ChaseBot, RandomBot, GoalkeeperBot, and StrikerBot. The ChaseBot simply chases after the ball and kicks it when it is close. The RandomBot takes random actions. The GoalkeeperBot is an advanced bot that acts as a goalkeeper. The StrikerBot is a custom bot we programmed to move behind the ball and kick it towards the goal.
 
-Our reward function is calculated based on 3 parts: the EventReward, the VelocityPlayerToBallReward, and the VelocityBallToGoalReward. The weights of each reward are 50, 1, and 1 respectively. The EventReward is computed based on the agent touching a ball, kicking a ball, scoring a goal, and conceding a goal. The weights for each part of the EventReward are 0.1, 0.1, 100, and -100 respectively. We implement this with reward function utilities from the HaxballGym library. 
+Our current reward function is calculated based on 3 parts: the EventReward, the VelocityPlayerToBallReward, and the VelocityBallToGoalReward. The weights of each reward are 50, 1, and 1 respectively. The EventReward is computed based on the agent touching a ball, kicking a ball, scoring a goal, and conceding a goal. The weights for each part of the EventReward are 0.1, 0.1, 100, and -100 respectively. We implement this with reward function utilities from the HaxballGym library.
+
 ## Evaluation
 For quantitative evaluation, we measure the performance of different types of agents by looking at their average expected rewards after training over 65536 timesteps. We use Tensorboard to visualize the graphs of these results. We also have each agent compete in a tournament to evaluate how well they are doing. Agents are divided into red and blue teams and are rated based on the final score of each match.
 
@@ -34,4 +35,14 @@ We hope to create an advanced all-rounder bot that can score and defend goals, a
 A challenge we may face is time constraints. It might take a lot of time to test different algorithms with different hyperparameters in order to create the best possible model.
 
 ## Resources Used
-Some resources that we have used in our implementation include the HaxballGym and Ursinaxball library.
+HaxballGym and Ursinaxball: For the game environment and physics engine.
+
+stable-baselines3: For the PPO algorithm implementation.
+
+PettingZoo: For the multi-agent environment API.
+
+SuperSuit: For vectorizing environments and handling observations in a multi-agent context.
+
+OpenSkill: For calculating Elo/TrueSkill ratings during evaluation tournaments.
+
+Tensorboard: For visualizing training metrics.
