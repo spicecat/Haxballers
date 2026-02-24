@@ -17,7 +17,7 @@ We currently use 4 different types of agents in our training. They are ChaseBot,
 
 Our reward function is calculated based on 3 parts: the EventReward, the VelocityPlayerToBallReward, and the VelocityBallToGoalReward. The weights of each reward are 50, 1, and 1 respectively. The EventReward is computed based on the agent touching a ball, kicking a ball, scoring a goal, and conceding a goal. The weights for each part of the EventReward are 0.1, 0.1, 100, and -100 respectively. We implement this with reward function utilities from the HaxballGym library. 
 ## Evaluation
-For quantitative evaluation, we measure the performance of different types of agents by looking at their average expected rewards after training over 65536 timesteps. We use Tensorboard to visualize the graphs of these results. We also have each agent compete in a tournament to evaluate how well they are doing. Agents will be divided into red and blue teams and be rated based on the final score of each match.
+For quantitative evaluation, we measure the performance of different types of agents by looking at their average expected rewards after training over 65536 timesteps. We use Tensorboard to visualize the graphs of these results. We also have each agent compete in a tournament to evaluate how well they are doing. Agents are divided into red and blue teams and are rated based on the final score of each match.
 
 [Insert Tensorboard figure of ep_rew_mean]
 
