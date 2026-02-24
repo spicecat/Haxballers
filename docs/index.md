@@ -12,9 +12,19 @@ Game Link: <https://www.haxball.com/>
 
 ![Logo](https://mir-s3-cdn-cf.behance.net/projects/404/fdd6fd211931451.Y3JvcCwxNjE1LDEyNjMsMzM5LDI3OQ.png)
 
-Reports:
+## Reports:
 
 - [Proposal](proposal.html)
 - [Status](status.html)
 - [Final](final.html)
+
+## Important Resources
+[**Ursinaxball**](https://github.com/HaxballGym/Ursinaxball): Haxball physics engine
+
+[**HaxballGym**](https://github.com/HaxballGym/HaxballGym): Gymnasium environment for ursinaxball
+
+[**stable-baselines3**](https://stable-baselines3.readthedocs.io/en/master/): PPO algorithm implementation
+
+[**PettingZoo**](https://pettingzoo.farama.org/): Multi-agent environment
+
 

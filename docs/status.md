@@ -26,17 +26,17 @@ We currently use 4 classical agents for training against. They are ChaseBot, Ran
 Our current reward function is calculated based on 3 parts: the EventReward, the VelocityPlayerToBallReward, and the VelocityBallToGoalReward. The weights of each reward are 50, 1, and 1 respectively. The EventReward is computed based on the agent touching a ball, kicking a ball, scoring a goal, and conceding a goal. The weights for each part of the EventReward are 0.1, 0.1, 100, and -100 respectively. We implement this with reward function utilities from the HaxballGym library.
 
 ## Evaluation
-For quantitative evaluation, we measure the performance of different types of agents by looking at their average expected rewards after training over 65536 timesteps. We use Tensorboard to visualize the graphs of these results. We also have each agent compete in a tournament to evaluate how well they are doing. Agents are divided into red and blue teams and are rated based on the final score of each match.
+For quantitative evaluation, we measure the performance of different types of agents by looking at their average expected rewards after training over 65536 timesteps. We use Tensorboard to visualize the graphs of these results. 
 
 [Insert Tensorboard figure of ep_rew_mean]
 
-We also implemented an Elo rating system using the openskill library (using the Plackett-Luce model). We run a tournament where our trained agents compete against the scripted bots (ChaseBot, GoalkeeperBot) to determine a relative skill rating.
+We also implemented an Elo rating system using the Plackett-Luce model from the openskill library. We run a tournament where our trained agents compete against the scripted bots (ChaseBot, GoalkeeperBot) to determine a relative skill rating.
 
 For qualitative analysis, we visualize the results externally by reviewing game replays. The Ursinaxball library comes with a way to record the games that are played and save it as a file. We currently have a game replay of an agent…
 [Insert video of a game replay]
 
 ## Remaining Goals and Challenges
-For the remainder of the quarter, we intend to finish migrating to the PettingZoo library. Currently, we are training our agents in a single-agent environment with Gymnasium. In order to implement self-play for better performance, we will need to use PettingZoo since it is more suitable for multi-agent reinforcement learning.
+For the remainder of the quarter, we intend to finish migrating to the PettingZoo library. Currently, we are training our agents in a single-agent environment against classical bots with Gymnasium. In order to implement self-play for better performance, we will need to use PettingZoo since it is more suitable for multi-agent reinforcement learning.
 
 We hope to create an advanced all-rounder bot that can score and defend goals, as well as coordinate with teammates via passing. We may also need to improve our reward function and optimize training hyperparameters.
 
