@@ -38,7 +38,7 @@ Our current reward function is calculated based on 3 parts: the EventReward, the
 ## Evaluation
 For quantitative evaluation, we measure the performance of different types of agents by looking at their average expected rewards after training over 65536 timesteps. We use Tensorboard to visualize the graphs of these results. 
 
-[Insert Tensorboard figure of ep_rew_mean]
+![ep_rew_mean figure](./figures/ep_rew_mean.png)
 
 We also implemented an Elo rating system using the Plackett-Luce model from the openskill library. We run a tournament where our trained agents compete against the scripted bots (ChaseBot, GoalkeeperBot) to determine a relative skill rating.
 
