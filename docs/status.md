@@ -2,6 +2,9 @@
 layout: default
 title: Status
 ---
+## Video Summary
+[Canvas Video](https://www.canva.com/design/DAHCNPmejgo/fl1dcJjY_gUUZJJ8l3V7iQ/edit)
+
 ## Project Summary
 Our project’s aim is to develop and train a multi-agent system to play the game of Haxball, a simplified soccer simulation game. We want to train agents so that they can score goals, defend goals, and coordinate with teammates. The agents will be given the current game state as an input, including the position and velocities of all players and the ball, and output an action where they either move in a cardinal direction or attempt to kick the ball. Agents will be trained in multiple scenarios such as 1v0, 1v1, 2v2, and 3v3 matches.
 
