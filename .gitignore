@@ -1,0 +1,6 @@
+HaxballGym/
+models/
+optuna_logs/
+recordings/
+tensorboard_logs/
+client_secrets.json
