@@ -3,6 +3,9 @@ channels:
   - conda-forge
   - defaults
 dependencies:
+  - python
+  - git
+  - pip
   - pip:
       - ipywidgets
       - openskill
