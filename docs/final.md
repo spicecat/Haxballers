@@ -55,10 +55,10 @@ We use the `HaxballGym` physics wrapper and convert it to a vectorized, multi-ag
 
 - **Observations:** Each agent can observe the positions and velocities of all players and the ball, the current game state (Kickoff or Playing), and the team kicking off. Coordinates are normalized and centered relative to the observing agent. Positions are flipped across the X-axis for agents on the blue team so agents are side-agnostic. In order to maintain the same observation space when an environment has less than 3 players per team, the positions for missing players are padded to be off-screen.
 
-Kickoff (before ball is touched):
+Kickoff (before ball is touched):  
 <img src="figures/kickoff.png" alt="Kickoff" width="600">
 
-Playing (after ball is touched):
+Playing (after ball is touched):  
 <img src="figures/playing.png" alt="Playing" width="600">
 
 - **Actions:** Each player can move in a cardinal direction and output a binary kick command. A `MultiDiscrete` space maps X-movement to $(-1, 0, 1)$, Y-movement to $(-1, 0, 1)$, and Kick to $(0, 1)$
@@ -91,16 +91,13 @@ To evaluate our models and provide opponents for training, we use the classical 
 
 Here is some gameplay footage of the classical bots:
 
-StrikerBot vs RandomBot:
-
+StrikerBot vs RandomBot:  
 <img src="figures/striker_vs_random.gif" alt="StrikerBot vs RandomBot" width="600">
 
-2 StrikerBot vs 2 GoalkeeperBot:
-
+2 StrikerBot vs 2 GoalkeeperBot:  
 <img src="figures/striker-2_vs_goalkeeper-2.gif" alt="2 StrikerBot vs 2 GoalkeeperBot" width="600">
 
-2 StrikerBot + 1 GoalkeeperBot vs 3 AllRounderBot:
-
+2 StrikerBot + 1 GoalkeeperBot vs 3 AllRounderBot:  
 <img src="figures/striker-2-goalkeeper-1_vs_allrounder-3.gif" alt="2 StrikerBot + 1 GoalkeeperBot vs 3 AllRounderBot" width="600">
 
 ### Curriculum Training
@@ -112,24 +109,20 @@ Our training process involved training a single model across two drills, then in
 - **1v1 Self-Play:** The agent plays against itself for 2,000,000 timesteps.
 - **2v2 Self-Play:** The agent plays in a team against itself in a team for 4,000,000 timesteps.
 
-Striker Drill:
-
+Striker Drill:  
 <img src="figures/striker-drill.gif" alt="Striker Drill" width="600">
 
-Goalkeeper Drill:
-
+Goalkeeper Drill:  
 <img src="figures/goalkeeper-drill.gif" alt="Goalkeeper Drill" width="600">
 
 ### Hyperparameter Optimization
 
 We tuned the learning rate, batch size, and entropy coefficient using Optuna over 10 trials of 500,000 timesteps in a 1v1 scenario against a GoalkeeperBot. We used the PPO default for other hyperparameters.
 
-Hyperparameter Importance:
-
+Hyperparameter Importance:  
 <img src="figures/hyperparameter-importance.png" alt="Hyperparameter Importance" width="600">
 
-Best Trial:
-
+Best Trial:  
 <img src="figures/best-trial.png" alt="Best Trial" width="600">
 
 ## Evaluation
@@ -138,28 +131,23 @@ Best Trial:
 
 To track learning progress, we measured the average episode reward via Tensorboard across our training curriculum.
 
-Striker Drill Mean Episode Reward:
-
+Striker Drill Mean Episode Reward:  
 <img src="figures/striker-drill-ep_rew_mean.png" alt="Striker Drill Mean Episode Reward" width="600">
 
 For the Striker Drill, the agent hovers around a mean episode reward of -2 until 400,000 timesteps. The mean episode reward then steadily climbs and converges to a reward of 58 at 1,000,000 timesteps. This shows the agent successfully learned to approach the ball and score approximately half the time.
 
-Striker Drill after 200,000 timesteps:
-
+Striker Drill after 200,000 timesteps:  
 <img src="figures/striker-drill-200000.gif" alt="Striker Drill after 200,000 timesteps" width="600">
 
-Striker Drill after 1,000,000 timesteps:
-
+Striker Drill after 1,000,000 timesteps:  
 <img src="figures/striker-drill-1000000.gif" alt="Striker Drill after 1,000,000 timesteps" width="600">
 
-Striker Drill and Goalkeeper Drill Mean Episode Reward:
-
+Striker Drill and Goalkeeper Drill Mean Episode Reward:  
 <img src="figures/goalkeeper-drill-ep_rew_mean.png" alt="Goalkeeper Drill Mean Episode Reward" width="600">
 
 For the Goalkeeper Drill, the mean episode reward stagnated around -50, indicating the agent was able to block around half the shots.
 
-1v1 and 2v2 Self-Play Mean Episode Reward:
-
+1v1 and 2v2 Self-Play Mean Episode Reward:  
 <img src="figures/self-play-ep_rew_mean.png" alt="1v1 and 2v2 Self-Play Mean Episode Reward" width="600">
 
 In 1v1 and 2v2 self-play, the mean episode reward hovered near -2, reflecting the zero-sum nature of self-play.
@@ -178,22 +166,18 @@ Tournament Results:
 
 The Goalkeeper and Striker bots performed the best, our PPO agent was third best, and the RandomBot performed the worst.
 
-Tournament Results:
-
+Tournament Results:  
 <img src="figures/tournament-results.png" alt="Tournament Results" width="600">
 
 ### Replays
 
 We recorded and viewed replays of games to identify learned behaviors. Visual analysis was crucial for refining the reward function and training curriculum.
 
-Reward Hacking Example:
-
+Reward Hacking Example:  
 <img src="figures/reward-hacking.gif" alt="Reward Hacking Example" width="600">
-
 The agent moving back and forth in front of the ball was one example of reward hacking behavior that we found when we rewarded absolute agent alignment for each timestep instead of rewarding improvement in alignment.
 
-Unlearning Example:
-
+Unlearning Example:  
 <img src="figures/unlearning.gif" alt="Unlearning Example" width="600">
 
 This example shows the agent unlearning how to score from the Striker Drill after training on the Goalkeeper drill.
