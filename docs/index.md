@@ -5,8 +5,7 @@ title: Home
 
 Source code: <https://github.com/spicecat/Haxballers>
 
-
-Description: Haxball is an online physics-based multiplayer soccer game. Our project aims to train agents that can score, defend, and coordinate with teammates in this game. 
+Description: Haxball is an online physics-based multiplayer soccer game. Our project aims to train agents that can score, defend, and coordinate with teammates in this game.
 
 Game Link: <https://www.haxball.com/>
 
@@ -19,6 +18,7 @@ Game Link: <https://www.haxball.com/>
 - [Final](final.html)
 
 ## Important Resources
+
 [**Ursinaxball**](https://github.com/HaxballGym/Ursinaxball): Haxball physics engine
 
 [**HaxballGym**](https://github.com/HaxballGym/HaxballGym): Gymnasium environment for ursinaxball
@@ -26,5 +26,3 @@ Game Link: <https://www.haxball.com/>
 [**stable-baselines3**](https://stable-baselines3.readthedocs.io/en/master/): PPO algorithm implementation
 
 [**PettingZoo**](https://pettingzoo.farama.org/): Multi-agent environment
-
-
