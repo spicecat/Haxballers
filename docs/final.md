@@ -44,7 +44,7 @@ Our project is highly non-trivial due to these challenges:
 ## Approach
 
 We train our agents using Proximal Policy Optimization (PPO) via the `stable-baselines3` library. PPO is a policy gradient method that optimizes a clipped objective function. The loss function is:  
-$L^{CLIP}(\theta) = \hat{\mathbb{E_t}} \left[ \min(r_t(\theta)\hat{A}_t, \text{clip}(r_t(\theta), 1 - \epsilon, 1 + \epsilon)\hat{A}_t) \right]$
+$$L^{CLIP}(\theta) = \hat{\mathbb{E_t}} \left[ \min(r_t(\theta)\hat{A}_t, \text{clip}(r_t(\theta), 1 - \epsilon, 1 + \epsilon)\hat{A}_t) \right]$$
 where $r_t(\theta)$ is the probability ratio of the new policy to the old policy, $\hat{A}_t$ is the estimated advantage, and $\epsilon$ is the clipping hyperparameter.
 
 ### Environment
