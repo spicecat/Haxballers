@@ -44,7 +44,7 @@ Our project is highly non-trivial due to these challenges:
 ## Approach
 
 We train our agents using Proximal Policy Optimization (PPO) via the `stable-baselines3` library. PPO is a policy gradient method that optimizes a clipped objective function. The loss function is:  
-$$L^{CLIP}(\theta) = \hat{\mathbb{E_t}} \left[ \min(r_t(\theta)\hat{A}_t, \text{clip}(r_t(\theta), 1 - \epsilon, 1 + \epsilon)\hat{A}_t) \right]$$
+$L^{CLIP}(\theta) = \hat{\mathbb{E_t}} \left[ \min(r_t(\theta)\hat{A}_t, \text{clip}(r_t(\theta), 1 - \epsilon, 1 + \epsilon)\hat{A}_t) \right]$
 where $r_t(\theta)$ is the probability ratio of the new policy to the old policy, $\hat{A}_t$ is the estimated advantage, and $\epsilon$ is the clipping hyperparameter.
 
 ### Environment
@@ -75,7 +75,7 @@ We originally use a reward function with the following:
 
 - Step Penalty: $-0.01$
 - Goal Scored / Conceded: $+100$ / $-100$
-- Ball Velocity to Goal$: $+0.05$
+- Ball Velocity to Goal: $+0.05$
 - Align Ball to Goal $+0.5$
 
 Step Penalty is to encourage urgency. The Goal Scored and Goal Conceded are the primary objectives. Ball Velocity to Goal rewards when the ball is heading towards the opponent’s goal. Align Ball to Goal uses cosine similarity reward when the agent is behind the ball in line with the opponent’s goal.
